@@ -1,10 +1,27 @@
-# Node.js template
+# Video Meeting
 
-This is a Node.js project.
+Google Meet / Zoom clone in a few lines of code.
 
-Add your [configuration](https://codesandbox.io/docs/projects/learn/setting-up/tasks) to optimize it for [CodeSandbox](https://codesandbox.io/p/dashboard).
+Video Meeting is a video conference website that lets you stay in touch with all your friends.
 
-## Resources
+Developed with ReactJS, Node.js, SocketIO.
 
-- [CodeSandbox Projects — Docs](https://codesandbox.io/docs/projects)
-- [CodeSandbox — Discord](https://discord.gg/Ggarp3pX5H)# Node.js template
+![Website](https://i.imgur.com/HhZD01o.jpg)
+
+### Website
+Try Video Meeting here [video.sebastienbiollo.com](https://video.sebastienbiollo.com)
+
+
+### Features
+- Is 100% free and open-source
+- No account needed
+- Unlimited users
+- Messaging chat and video streaming in real-time
+- Screen sharing to present documents, slides, and more
+- Everyting is peer-to-peer thanks to webrtc
+
+
+### Local setup
+
+1. `yarn install`
+2. `yarn dev`
