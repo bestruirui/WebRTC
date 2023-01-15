@@ -4,13 +4,107 @@ html, body {
 body {
 	margin: 0;
 	text-align: center;
-	background-color: whitesmoke;
+	background: url(/images/bg.svg);
+	background-attachment: fixed;
 }
-
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: grey;
+}
+h1.container-title-content {
+    margin-top: 1.5rem;
+}
 .container2 {
 	padding-top: 30px;
 	margin: auto;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+}
+.container-title {  
+    left: 0;
+    right: 0;
+	text-align: left !important;
+    margin: auto;
+    padding: 77px 0px;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+p.container-title-content {
+    margin: 0;
+}
+.placeholder{
+	-webkit-text-size-adjust: 100%;
+    line-height: 30px;
+    -webkit-font-smoothing: antialiased;
+    color: #8a94a7;
+    font-size: 1rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-align: center;
+    visibility: visible;
+    box-sizing: inherit;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+.join-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 75px;
+    margin: auto;
+    border-radius: 12px;
+    background: #ffffff;
+    padding: 28px 16px;
+    margin-left: 4%;
+    margin-right: 4%;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
+}
+@media (min-width: 481px)
+{
+	.join-container {
+    padding-left: 24px;
+    padding-right: 24px;
+    }
+}
+.MuiInput-underline:before {
+    display:none;
+}
+.MuiInput-underline:after {
+   display:none;
+}
+.MuiInput-root {
+    padding: 11px 15px;
+    height: 48px;
+    background-color: #ffffff;
+    color: #493535 !important;
+    box-shadow: none;
+    max-width: 100%;
+    width: 100%;
+    min-width: 280px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    border-radius: 6px;
+}
+.join-container-bottom{ 
+    justify-content: center;
+    height: 48px;
+    background: linear-gradient(65deg, #0270d7 0, #0f8afd 100%);
+    border-radius: 6px;
+    width: 100%;
+	margin-left: 0px !important;
+}
+p.join-name {
+    color: #000;
+    font-weight: 600;
+    font-size: 24px;
+}
+.join-container-url{
+	border: 3px solid rgb(0 0 0 / 50%);
+    position: relative;
+    width: 100%;
 }

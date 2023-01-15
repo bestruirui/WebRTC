@@ -26,17 +26,15 @@ class Home extends Component {
 	render() {
 		return (
 			<div className="container2">
-				<div>
-					<h1 style={{ fontSize: "45px" }}>WebRTC Meeting</h1>
-					<p style={{ fontWeight: "200" }}>基于WebRTC的视频会议</p>
+  
+				<div className="container-title">
+					<h1 style={{ fontSize: "45px" }}>W.R.M</h1>
+					<h1 className="container-title-content" style={{ fontWeight: "200" }}>一个运行在浏览器的视频会议</h1>
 				</div>
-				<div style={{
-					background: "white", width: "30%", height: "auto", padding: "20px", minWidth: "400px",
-					textAlign: "center", margin: "auto", marginTop: "100px"
-				}}>
-					<p style={{ margin: 0, fontWeight: "bold", paddingRight: "50px" }}>加入一个会议</p>
-					<Input placeholder="URL" onChange={e => this.handleChange(e)} />
-					<Button variant="contained" color="primary" onClick={this.join} style={{ margin: "20px" }}>加入</Button>
+				<div className="join-container">
+					<p className="join-name" >加入一个会议</p>
+					<Input className="join-container-url" placeholder="URL" onChange={e => this.handleChange(e)} />
+					<Button className="join-container-bottom" variant="contained" color="primary" onClick={this.join} style={{ margin: "20px" }}>加入</Button>
 				</div>
 			</div>
 		)
