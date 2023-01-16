@@ -32,7 +32,7 @@ body {
     height: auto;
 }
 .self-video-container {
-    margin: 4%;
+    padding: 4%;
 }
 video#my-video {
     border-radius: 10px;

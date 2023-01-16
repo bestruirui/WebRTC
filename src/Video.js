@@ -19,9 +19,10 @@ import { Row } from 'reactstrap'
 import Modal from 'react-bootstrap/Modal'
 import 'bootstrap/dist/css/bootstrap.css'
 import "./Video.css"
-
-const server_url = process.env.NODE_ENV === 'production' ? 'https://video.sebastienbiollo.com' : "http://localhost:4001"
-
+//调试用
+const server_url = 'https://rfho3t-4001.preview.csb.app'
+//部署用
+//const server_url = process.env.NODE_ENV === 'production' ? 'https://video.sebastienbiollo.com' : "http://localhost:4001"
 var connections = {}
 const peerConnectionConfig = {
 	'iceServers': [
@@ -32,6 +33,9 @@ const peerConnectionConfig = {
 var socket = null
 var socketId = null
 var elms = 0
+var nameitems = ['佩奇','乔治','小新','正南','妮妮','风间','阿呆'];
+var nameitem = nameitems[Math.floor(Math.random()*nameitems.length)];
+
 
 class Video extends Component {
 	constructor(props) {
@@ -52,7 +56,7 @@ class Video extends Component {
 			message: "",
 			newmessages: 0,
 			askForUsername: true,
-			username: faker.internet.userName(),
+			username: nameitem,
 		}
 		connections = {}
 
@@ -457,22 +461,22 @@ class Video extends Component {
 			)
 		}
 		return (
-			<div>
+			<React.Fragment>
 				{this.state.askForUsername === true ?
-					<div>
+					<React.Fragment>
 						<div className="self-video-container">
 							<div className="my-video-cut">
 							  <video id="my-video" ref={this.localVideoref} autoPlay muted></video>
 							</div>
 						</div>
 						<div className="join-container">
-							<p className="join-name">Set your username</p>
-							<Input className="join-container-url" placeholder="Username" value={this.state.username} onChange={e => this.handleUsername(e)} />
-							<Button className="join-container-bottom" variant="contained" color="primary" onClick={this.connect} style={{ margin: "20px" }}>Connect</Button>
+							<p className="join-name">你在会议的名字</p>
+							<Input className="join-container-url" placeholder={this.state.username}  onChange={e => this.handleUsername(e)} />
+							<Button className="join-container-bottom" variant="contained" color="primary" onClick={this.connect} style={{ margin: "20px" }}>加入</Button>
 						</div>
-					</div>
+					</React.Fragment>
 					:
-					<div>
+					<React.Fragment>
 						<div className="btn-down" style={{ backgroundColor: "whitesmoke", color: "whitesmoke", textAlign: "center" }}>
 							<IconButton style={{ color: "#424242" }} onClick={this.handleVideo}>
 								{(this.state.video === true) ? <VideocamIcon /> : <VideocamOffIcon />}
@@ -528,9 +532,9 @@ class Video extends Component {
 								</div>
 							</Row>
 						</div>
-					</div>
+					</React.Fragment>
 				}
-			</div>
+			</React.Fragment>
 		)
 	}
 }

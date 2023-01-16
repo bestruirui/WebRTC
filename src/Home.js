@@ -25,7 +25,7 @@ class Home extends Component {
 
 	render() {
 		return (
-			<div className="container2">
+			<React.Fragment>
   
 				<div className="container-title">
 					<h1 style={{ fontSize: "45px" }}>W.R.M</h1>
@@ -36,7 +36,7 @@ class Home extends Component {
 					<Input className="join-container-url" placeholder="URL" onChange={e => this.handleChange(e)} />
 					<Button className="join-container-bottom" variant="contained" color="primary" onClick={this.join} style={{ margin: "20px" }}>加入</Button>
 				</div>
-			</div>
+			</React.Fragment>
 		)
 	}
 }

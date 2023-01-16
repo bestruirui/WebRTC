@@ -50,15 +50,15 @@ p.container-title-content {
     height: auto;
 }
 .join-container {
+    right: 4%;
     position: absolute;
     bottom: 5%;
     margin: auto;
     border-radius: 10px;
     background: #ffffff;
     padding: 28px 16px;
-    margin-left: 4%;
-    margin-right: 4%;
     box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
+    left: 4%;
 }
 @media (min-width: 481px)
 {
