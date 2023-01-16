@@ -20,7 +20,7 @@ import Modal from 'react-bootstrap/Modal'
 import 'bootstrap/dist/css/bootstrap.css'
 import "./Video.css"
 //调试用
-const server_url = 'https://webrtc-api-kg14.onrender.com'
+const server_url = 'https://webrtc.api.bestrui.topwebrtc.api.bestrui.top'
 //部署用
 //const server_url = process.env.NODE_ENV === 'production' ? 'https://video.sebastienbiollo.com' : "http://localhost:4001"
 var connections = {}
