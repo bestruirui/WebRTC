@@ -1,6 +1,4 @@
-html, body {
-  	height: 100%;
-}
+
 body {
 	margin: 0;
 	text-align: center;
@@ -52,12 +50,10 @@ p.container-title-content {
     height: auto;
 }
 .join-container {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 75px;
+    position: absolute;
+    bottom: 5%;
     margin: auto;
-    border-radius: 12px;
+    border-radius: 10px;
     background: #ffffff;
     padding: 28px 16px;
     margin-left: 4%;

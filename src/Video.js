@@ -170,6 +170,11 @@ class Video extends Component {
 					.then((stream) => {})
 					.catch((e) => console.log(e))
 			}
+		}else {
+			try {
+				let tracks = this.localVideoref.current.srcObject.getTracks()
+				tracks.forEach(track => track.stop())
+			} catch (e) {}
 		}
 	}
 
@@ -455,16 +460,15 @@ class Video extends Component {
 			<div>
 				{this.state.askForUsername === true ?
 					<div>
-						<div style={{background: "white", width: "30%", height: "auto", padding: "20px", minWidth: "400px",
-								textAlign: "center", margin: "auto", marginTop: "50px", justifyContent: "center"}}>
-							<p style={{ margin: 0, fontWeight: "bold", paddingRight: "50px" }}>Set your username</p>
-							<Input placeholder="Username" value={this.state.username} onChange={e => this.handleUsername(e)} />
-							<Button variant="contained" color="primary" onClick={this.connect} style={{ margin: "20px" }}>Connect</Button>
+						<div className="self-video-container">
+							<div className="my-video-cut">
+							  <video id="my-video" ref={this.localVideoref} autoPlay muted></video>
+							</div>
 						</div>
-
-						<div style={{ justifyContent: "center", textAlign: "center", paddingTop: "40px" }}>
-							<video id="my-video" ref={this.localVideoref} autoPlay muted style={{
-								borderStyle: "solid",borderColor: "#bdbdbd",objectFit: "fill",width: "60%",height: "30%"}}></video>
+						<div className="join-container">
+							<p className="join-name">Set your username</p>
+							<Input className="join-container-url" placeholder="Username" value={this.state.username} onChange={e => this.handleUsername(e)} />
+							<Button className="join-container-bottom" variant="contained" color="primary" onClick={this.connect} style={{ margin: "20px" }}>Connect</Button>
 						</div>
 					</div>
 					:
@@ -513,17 +517,15 @@ class Video extends Component {
 						</Modal>
 
 						<div className="container">
-							<div style={{ paddingTop: "20px" }}>
+							<div className="container-copy-url">
 								<Input value={window.location.href} disable="true"></Input>
-								<Button style={{backgroundColor: "#3f51b5",color: "whitesmoke",marginLeft: "20px",
-									marginTop: "10px",width: "120px",fontSize: "10px"
-								}} onClick={this.copyUrl}>Copy invite link</Button>
+								<Button className="copy-url" onClick={this.copyUrl}>会议链接</Button>
 							</div>
 
-							<Row id="main" className="flex-container" style={{ margin: 0, padding: 0 }}>
-								<video id="my-video" ref={this.localVideoref} autoPlay muted style={{
-									borderStyle: "solid",borderColor: "#bdbdbd",margin: "10px",objectFit: "fill",
-									width: "100%",height: "100%"}}></video>
+							<Row id="main" className="flex-container" >
+								<div className="my-video-cut">
+								<video id={this.state.screen === true ? "my-video-screen" : "my-video"} ref={this.localVideoref} autoPlay muted></video>
+								</div>
 							</Row>
 						</div>
 					</div>
